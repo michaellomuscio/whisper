@@ -3,7 +3,8 @@
 [[Blog]](https://openai.com/blog/whisper)
 [[Paper]](https://arxiv.org/abs/2212.04356)
 [[Model card]](https://github.com/openai/whisper/blob/main/model-card.md)
-[[Colab example]](https://colab.research.google.com/github/openai/whisper/blob/master/notebooks/LibriSpeech.ipynb)
+[[Colab example]](https://colab.research.google.com/github/openai/whisper/blob/main/notebooks/LibriSpeech.ipynb)
+[[Transcribe your own audio in Colab]](https://colab.research.google.com/github/openai/whisper/blob/main/notebooks/Colab_Whisper_Transcription.ipynb)
 
 Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multitasking model that can perform multilingual speech recognition, speech translation, and language identification.
 
@@ -139,6 +140,20 @@ result = whisper.decode(model, mel, options)
 # print the recognized text
 print(result.text)
 ```
+
+## Google Colab
+
+You can transcribe your own audio directly in a browser using Google Colab.
+Open [this notebook](https://colab.research.google.com/github/openai/whisper/blob/main/notebooks/Colab_Whisper_Transcription.ipynb)
+and run the cells. The second cell uploads an audio file:
+
+```python
+from google.colab import files
+uploaded = files.upload()
+audio_path = next(iter(uploaded))
+```
+
+The notebook then installs Whisper and runs transcription on the uploaded file.
 
 ## More examples
 
